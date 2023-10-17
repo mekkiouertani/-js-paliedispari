@@ -3,7 +3,6 @@ palindromi();
 function palindromi(){
 const btn = document.querySelector('button');
 const btnReset = document.getElementById('reset');
-
 const data = document.getElementById('data');
 const boxAlert = document.getElementById('answer');
 
@@ -26,11 +25,15 @@ btn.addEventListener('click', function(){
         arrInverse += dataValue[x];
     } 
 
+    (arr === arrInverse) ? msgTrue() : msgFalse();
+     
+    /* SOSTITUITO DA TERNARY
     if(arr === arrInverse){
         msgTrue();
     } else{
         msgFalse();
-    }
+    } */
+    
 });
 
 btnReset.addEventListener('click', function(){
