@@ -1,51 +1,52 @@
 //PALINDROMI
 palindromi();
 function palindromi(){
-const btn = document.querySelector('button');
-const btnReset = document.getElementById('reset');
-const data = document.getElementById('data');
-const boxAlert = document.getElementById('answer');
 
-let arr = '';
-let arrInverse ='';
+    const btn = document.querySelector('button');
+    const btnReset = document.getElementById('reset');
+    const data = document.getElementById('data');
+    const boxAlert = document.getElementById('answer');
 
-btn.addEventListener('click', function(){
-    let dataValue = data.value;
-    data.value = '';
-    
-    //ciclo for per scomporre le lettere della parola e aggiorniamo arr+=
-    for(let i = 0; i < dataValue.length ; i++){
-        arr += dataValue[i];
-    }
+    let arr = '';
+    let arrInverse ='';
 
-    //ciclo for per scomporre le lettere della parola ma in ordine inverso e aggiorniamo arr+=
-    for(let x = dataValue.length -1; x >= 0 ; x--){
-        arrInverse += dataValue[x];
-    } 
+    btn.addEventListener('click', function(){
+        let dataValue = data.value;
+        data.value = '';
+        
+        //ciclo for per scomporre le lettere della parola e aggiorniamo arr+=
+        for(let i = 0; i < dataValue.length ; i++){
+            arr += dataValue[i];
+        }
 
-    //condizione se arr è uguale o no ad arrInverse
-    (arr === arrInverse) ? msgTrue() : msgFalse();
-     
-});
+        //ciclo for per scomporre le lettere della parola ma in ordine inverso e aggiorniamo arr+=
+        for(let x = dataValue.length -1; x >= 0 ; x--){
+            arrInverse += dataValue[x];
+        } 
 
-btnReset.addEventListener('click', function(){
-    console.log(btnReset);
-    boxAlert.classList.add('d-none');
-    boxAlert.innerHTML = '';
-    data.value = '';
-});
+        //condizione se arr è uguale o no ad arrInverse
+        (arr === arrInverse) ? msgTrue() : msgFalse();
+        
+    });
 
-function msgTrue(){
-    boxAlert.innerHTML = `la parola è palindroma`
-    boxAlert.classList.remove('d-none', 'alert-danger');
-    boxAlert.classList.add('alert-primary');
-};
+    btnReset.addEventListener('click', function(){
+        console.log(btnReset);
+        boxAlert.classList.add('d-none');
+        boxAlert.innerHTML = '';
+        data.value = '';
+    });
 
-function msgFalse(){
-    boxAlert.innerHTML = `la parola non è palindroma`
-    boxAlert.classList.remove('d-none','alert-primary');
-    boxAlert.classList.add('alert-danger');
-};
+    function msgTrue(){
+        boxAlert.innerHTML = `la parola è palindroma`
+        boxAlert.classList.remove('d-none', 'alert-danger');
+        boxAlert.classList.add('alert-primary');
+    };
+
+    function msgFalse(){
+        boxAlert.innerHTML = `la parola non è palindroma`
+        boxAlert.classList.remove('d-none','alert-primary');
+        boxAlert.classList.add('alert-danger');
+    };
 
 };
 
