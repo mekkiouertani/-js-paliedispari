@@ -3,8 +3,9 @@ palindromi();
 function palindromi(){
 const btn = document.querySelector('button');
 const btnReset = document.getElementById('reset');
-const boxAlert = document.getElementById('answer');
+
 const data = document.getElementById('data');
+const boxAlert = document.getElementById('answer');
 
 let arr = '';
 let arrInverse ='';
@@ -26,23 +27,40 @@ btn.addEventListener('click', function(){
     } 
 
     if(arr === arrInverse){
-        boxAlert.innerHTML += `la parola è palindroma`
-        boxAlert.classList.remove('d-none');
+        msgTrue();
     } else{
-        boxAlert.innerHTML += `la parola non è palindroma`
-        boxAlert.classList.remove('d-none');
+        msgFalse();
     }
 });
 
 btnReset.addEventListener('click', function(){
+    console.log(btnReset);
     boxAlert.classList.add('d-none');
     boxAlert.innerHTML = '';
     data.value = '';
 });
+
+function msgTrue(){
+    boxAlert.innerHTML = `la parola è palindroma`
+    boxAlert.classList.remove('d-none', 'alert-danger');
+    boxAlert.classList.add('alert-primary');
 };
 
+function msgFalse(){
+    boxAlert.innerHTML = `la parola non è palindroma`
+    boxAlert.classList.remove('d-none','alert-primary');
+    boxAlert.classList.add('alert-danger');
+};
+
+};
+
+
+
+
+
 //NUMERI
-numeri();
+//numeri();
+
 function numeri(){
 const btn2 = document.getElementById('btn2')
 const btnReset2 = document.getElementById('reset2');
@@ -53,9 +71,11 @@ btn2.addEventListener('click', function(){
     let dataValue2 = data2.value;
     data2.value = '';
     console.log(dataValue2);
-})
 
 
 
-
+//CONSOLELOG
+console.log(btnReset2);
+console.log(boxAlert2);
+});
 };
