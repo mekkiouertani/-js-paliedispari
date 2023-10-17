@@ -13,27 +13,19 @@ btn.addEventListener('click', function(){
     let dataValue = data.value;
     data.value = '';
     
-    //ciclo for per scomporre le lettere della parola
-    //le pushiamo dentro ARR
+    //ciclo for per scomporre le lettere della parola e aggiorniamo arr+=
     for(let i = 0; i < dataValue.length ; i++){
         arr += dataValue[i];
     }
 
-    //ciclo for per scomporre le lettere della parola ma in ordine inverso, 
-    //le pushiamo dentro ArrINVERSE
+    //ciclo for per scomporre le lettere della parola ma in ordine inverso e aggiorniamo arr+=
     for(let x = dataValue.length -1; x >= 0 ; x--){
         arrInverse += dataValue[x];
     } 
 
+    //condizione se arr è uguale o no ad arrInverse
     (arr === arrInverse) ? msgTrue() : msgFalse();
      
-    /* SOSTITUITO DA TERNARY
-    if(arr === arrInverse){
-        msgTrue();
-    } else{
-        msgFalse();
-    } */
-    
 });
 
 btnReset.addEventListener('click', function(){
