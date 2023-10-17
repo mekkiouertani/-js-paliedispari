@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindromi e Numeri</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <title>Palindromi e Numeri</title>
 </head>
+
 <body>
+    <div class="container mt-3">
+        <h1 class="border-bottom">Palindromi</h1>
+        <div class="form-group mt-3">
+            <label for="data" class="d-block fs-4">Insisci i dati</label>
+            <input type="text" id="data" value="" name="data">
+            <button class="btn btn-primary">Invia</button>
+            <button id="reset" class="btn btn-warning">Reset</button>
+            <button id="print" class="btn btn-success d-block">Stampa</button>
+            <div id="answer" class="alert alert-primary mt-2 w-50 d-block d-none"></div>
+        </div>
+        <!--  <section id="ex-2" class="d-flex justify-content-center h-50 border-top">
+            <h2 class="text-uppercase fs-1">numeri</h2>
+        </section> -->
     
- <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
