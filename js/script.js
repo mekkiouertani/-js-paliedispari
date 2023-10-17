@@ -1,6 +1,6 @@
 //PALINDROMI
     //creiamo caselle input su HTML, le dichiariamo su js
-    //
+    
 
 
 const btn = document.querySelector('button');
@@ -28,17 +28,26 @@ btn.addEventListener('click', function(){
     for(let x = dataValue.length -1; x >= 0 ; x--){
         console.log(dataValue[x]);
         arrInverse.push(dataValue[x]);
+    } 
+
+    if(arr === arrInverse.reverse()){
+        boxAlert.innerHTML = `la parola è palindroma`
+        boxAlert.classList.remove('d-none');
+    } else{
+        boxAlert.innerHTML = `la parola non è palindroma`
+        boxAlert.classList.remove('d-none');
     }
-    
-    
+
     //CONSOLE.LOG 
     //console.log(dataValue);  
     //console.log(data);
-    console.log(arr);
-    console.log(arrInverse);
+    console.log('array 1 ', arr);
+    console.log('arrayInverso ',arrInverse);
 });
 
+
 btnReset.addEventListener('click', function(){
+    boxAlert.classList.add('d-none');
     boxAlert.innerHTML = '';
     data.value = '';
 });
