@@ -3,3 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#ex-1, #ex-2{
+    min-height: 30vh;
+}
