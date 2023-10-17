@@ -35,7 +35,7 @@ function palindromi(){
         boxAlert.innerHTML = '';
         data.value = '';
     });
-
+    
     function msgTrue(){
         boxAlert.innerHTML = `la parola è palindroma`
         boxAlert.classList.remove('d-none', 'alert-danger');
@@ -55,23 +55,46 @@ function palindromi(){
 
 
 //NUMERI
-//numeri();
-
+numeri();
 function numeri(){
-const btn2 = document.getElementById('btn2')
-const btnReset2 = document.getElementById('reset2');
-const boxAlert2 = document.getElementById('answer2');
-const data2 = document.getElementById('data2');
 
-btn2.addEventListener('click', function(){
-    let dataValue2 = data2.value;
-    data2.value = '';
-    console.log(dataValue2);
+    const btn2 = document.getElementById('btn2')
+    const btnReset2 = document.getElementById('reset2');
+    const boxAlert2 = document.getElementById('answer2');
+    const data2 = document.getElementById('data2');
 
+    btn2.addEventListener('click', function(){
+        let dataValue2 = parseInt(data2.value);
+        data2.value = '';
+        console.log(dataValue2);
+        (!NaN === dataValue2) ? msgFalse() : msgTrue();
+        
 
+    //CONSOLELOG
+    console.log(btnReset2);
+    console.log(boxAlert2);
+    });
 
-//CONSOLELOG
-console.log(btnReset2);
-console.log(boxAlert2);
-});
+    function isEven(){ 
+        return (num % 2 === 0) ? true : false;
+     };
+
+    function msgTrue(){
+        boxAlert2.innerHTML = `è un numero`
+        boxAlert2.classList.remove('d-none', 'alert-danger');
+        boxAlert2.classList.add('alert-primary');
+    };
+
+    function msgFalse(){
+        boxAlert2.innerHTML = `inserisci solo numeri`
+        boxAlert2.classList.remove('d-none','alert-primary');
+        boxAlert2.classList.add('alert-danger');
+    };
+
+    btnReset2.addEventListener('click', function(){
+        boxAlert2.classList.add('d-none');
+        boxAlert2.innerHTML = '';
+        data.value2 = '';
+    });
+    
 };
