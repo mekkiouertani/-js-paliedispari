@@ -30,6 +30,8 @@ function palindromi(){
     });
 
     btnReset.addEventListener('click', function(){
+        arr = '';
+        arrInverse = '';
         console.log(btnReset);
         boxAlert.classList.add('d-none');
         boxAlert.innerHTML = '';
@@ -62,25 +64,29 @@ function numeri(){
     const btnReset2 = document.getElementById('reset2');
     const boxAlert2 = document.getElementById('answer2');
     const data2 = document.getElementById('data2');
+    
+    let numData;
 
     btn2.addEventListener('click', function(){
         let dataValue2 = parseInt(data2.value);
         data2.value = '';
-        console.log(dataValue2);
-        (!NaN === dataValue2) ? msgFalse() : msgTrue();
-        
+        //console.log(dataValue2);
+        numData = (!NaN === dataValue2) ? '' :  msgFalse();
+        (numData == isEven()) ? msgTrue() : '';
 
-    //CONSOLELOG
-    console.log(btnReset2);
-    console.log(boxAlert2);
+        //CONSOLELOG
+        
+        //console.log(btnReset2);
+        //console.log(boxAlert2);
+        console.log(numData);
     });
 
     function isEven(){ 
-        return (num % 2 === 0) ? true : false;
-     };
+        return (numData % 2 === 0) ? true : false;
+    };
 
     function msgTrue(){
-        boxAlert2.innerHTML = `è un numero`
+        boxAlert2.innerHTML = `è pari`
         boxAlert2.classList.remove('d-none', 'alert-danger');
         boxAlert2.classList.add('alert-primary');
     };
